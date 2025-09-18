@@ -79,3 +79,5 @@ def hello(str="hii"):
 print(hello.__doc__)
 print(hello.__name__,"\n\n\n")
 
+# import folder.file
+# from folder.file import func as fc
