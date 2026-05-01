@@ -1,0 +1,8 @@
+Models like GPT,gemini are proprietory models which  cannot run offline on our m/c
+because its data is all hidden from user
+such models can  be used using api key 
+so we can use opensource models like ollama,qwen2.5,gamma
+
+install image of ollama on docker and run the container
+ now need to download openwebui for ui to use ollama
+ pull the docker image of openwebui and run that container

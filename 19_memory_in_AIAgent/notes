@@ -1,0 +1,97 @@
+Context Window in LLMs
+
+When interacting with an LLM, it has a context window, meaning it can only process a limited number of tokens at one time (input + output combined).
+
+If the conversation becomes longer than that limit:
+
+Older tokens/messages may be truncated
+The model may lose earlier context
+It can appear to “forget” previous parts of the conversation
+
+So memory systems are introduced to reduce this problem.
+
+
+
+Types of Memory in LLM Applications
+1. Short-Term Memory
+
+This is memory used within the active conversation/session.
+
+It usually includes:
+
+Recent chat history
+Current task details
+Messages still inside the context window
+
+2. Long-Term Memory
+
+This stores important information outside the context window and retrieves it when needed later.
+
+Usually implemented using:
+
+Vector databases
+User profile memory
+Persistent storage
+RAG systems
+
+Types of LongTerm Memory
+Semantic   → facts
+Episodic   → past chats/actions
+Procedural → how to do things
+Preference → personalization
+Project    → ongoing work
+
+
+
+ Mem0 and Zep provide production-ready external memory solutions. Mem0 offers a managed memory layer that automatically extracts, stores, and retrieves relevant information. 
+
+
+
+
+
+Problems While Using LTM in LLMs
+1. Incorrect Memory Storage
+
+Wrong or low-quality information may be saved.
+
+Example:
+User jokes “I am CEO of OpenAI” and system stores it as fact.
+
+Result:
+
+Future responses become inaccurate.
+
+2. Retrieval Errors
+
+Relevant memory may not be fetched, or irrelevant memory may be retrieved.
+
+Example:
+User asks Python debugging help, but system retrieves travel preferences.
+
+Result:
+
+Bad context, weaker answers.
+
+3. Memory Conflicts / Contradictions
+
+Stored facts can change over time.
+
+Example:
+
+Old memory: user lives in Nagpur
+New memory: user moved to Pune
+Result:
+
+Conflicting responses unless updated correctly.
+
+Mem0 saves  memory into these types all by itself
+It is designed to automatically handle memory extraction, storage, updating, and retrieval for LLM apps so you don’t have to manually code all the memory logic.
+
+
+vector embeddings cannot store relations , they are best suited for facts and all 
+but for A->B these hirarchical relation vector embedding cannot store it
+so using knowledge graph  we can store  relations between nodes
+eg(Neo4j graph DB),kuzu db
+
+
+to interact with knowledge graph we need to create cyperQuery

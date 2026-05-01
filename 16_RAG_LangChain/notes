@@ -1,0 +1,70 @@
+RAG: Retrieval Augmented Generation
+why RAG:
+        instead of providing generalized answers it gives answers on data that we provide , based on our data/context.
+
+        like pdf, docs
+
+RAG pipeline: 
+     2 phases: 
+        1)indexing
+        2)Retrieval
+
+1)Indexing phase(index.py)
+    Your Data/Documents
+    → Chunk into smaller pieces
+    → Convert each chunk into vector embeddings using embedding model
+    → Store vectors in vector database(pinecone db, chromadb,pgvector)
+
+   
+   2) Retrieval phase(chat.py)
+
+    User Query
+    → Convert query into embedding using same/similar embedding model
+    → Compare query vector with stored vectors
+    → Retrieve most relevant chunks
+    → Send retrieved chunks + query to LLM
+    → LLM generates final answer
+
+
+    LangChain:
+        LangChain is a framework that helps developers build LLM-powered applications by providing components such as document loaders, PDF parsers, text chunking, embeddings integration, vector database connections, prompt templates, memory, retrievers, and workflow chains
+
+        langchain is a library which provide a lot of utility tools which we can use in day to day ai tasks
+
+
+        Sync-Async Approach:
+        The above(index.py & chat.py) is synchronous approach means it  waits untill process is complet.
+        Everything happens step by step, one task waits for the previous one to finish.
+        One step blocks next step,time consuming.
+
+        Async Approach:
+        Multiple users send queries to server
+        Server immediately stores requests in a queue
+        Worker/processor consumes queued jobs one by one or in parallel
+        Worker runs RAG pipeline:
+        embed query
+        retrieve from vector DB (e.g. Qdrant)
+        call LLM
+        generate answer
+        Store result in DB/cache
+        User polls / websocket receives completed response
+
+
+         Sync-Async Approach:
+        The above(index.py & chat.py) is synchronous approach means it  waits untill process is complet.
+        Everything happens step by step, one task waits for the previous one to finish.
+        One step blocks next step,time consuming.
+
+        Async Approach:
+        Multiple users send queries to server
+        Server immediately stores requests in a queue
+        Worker/processor consumes queued jobs one by one or in parallel
+        Worker runs RAG pipeline:
+        embed query
+        retrieve from vector DB (e.g. Qdrant)
+        call LLM
+        generate answer
+        Store result in DB/cache
+        User polls / websocket receives completed response
+
+

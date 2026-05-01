@@ -1,0 +1,3 @@
+python rq:
+        python rq (redis queue) is a python library for queuing job and processing them concurrently
+        
