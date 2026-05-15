@@ -1,0 +1,46 @@
+MCP:model context protocol
+
+Earlier, every LLM application connected to tools using custom code and different architectures. There was no standardized or universal protocol for how LLMs should discover, access, and use tools. MCP (Model Context Protocol) was introduced to provide a standardized way for LLMs to connect with tools, APIs, memory, databases, and external systems to build interoperable AI agents.
+
+You can think of MCP like:
+
+USB-C for AI agents
+
+Before MCP:
+
+every framework had different integrations
+tools were tightly coupled
+difficult interoperability
+difficult portability between models/frameworks
+
+With MCP:
+
+standard tool interface
+standard context sharing
+reusable agent ecosystems
+easier multi-agent/tool orchestration
+
+Architecture idea:
+
+LLM ↔ MCP Protocol ↔ Tools/Memory/APIs
+
+Examples of tools:
+
+web search
+databases
+filesystem
+GitHub
+Slack
+calendar
+code execution
+
+So MCP is essentially:
+
+a protocol layer
+for standardized AI-agent communication with tools and context systems
+
+Very similar to how:
+
+HTTP standardized web communication
+USB standardized hardware connection
+MCP standardizes AI tool connectivity
