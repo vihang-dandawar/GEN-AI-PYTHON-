@@ -1,0 +1,15 @@
+Speech 2 Speech:  audio(i/p)--> Audio Model(only)-->( realtime o/p) audio (customer care)
+Chained Architecture: audio(i/p)--> text--> existing (Any)LLM-->text(o/p)--> audio (customer care)
+
+
+User Voice
+   ↓
+Speech-to-Text (SpeechRecognition)
+   ↓
+LLM Processing (OpenRouter/OpenAI API)
+   ↓
+Text Response
+   ↓
+Text-to-Speech (gTTS/pygame)
+   ↓
+Audio Output
