@@ -1,0 +1,14 @@
+venv/
+venv*/
+env/
+*/venv/
+*/env/
+*.venv
+
+.env
+.env*
+
+__pycache__/
+*.pyc
+
+*.mp3

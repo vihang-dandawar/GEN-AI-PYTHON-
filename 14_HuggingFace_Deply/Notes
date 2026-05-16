@@ -1,0 +1,8 @@
+Hugging face is just like github of LLM models, here we push our llm models
+we cannot upload models on github thats why hugging face exists,
+
+hugging face  has 3 things 
+1) models: different opensource models
+2) spaces: its like playground for these models where we can interact with them
+3) datasets : differnt datasets where we can test these models
+
