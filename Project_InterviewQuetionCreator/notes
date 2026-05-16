@@ -1,0 +1,6 @@
+Interview Quetions Creator
+
+based on  the resource provided the ai will generate the quetions 
+
+pdf--> extract docs--> chunks--> embedding model-->vector embedding-
+->semantic search-->vectorDB
